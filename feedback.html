@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feedback - Violaceos Hotel CRM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="navbar">
+  <div class="nav-left">
+    <button class="hamburger" onclick="toggleSidebar()" aria-label="Toggle menu">&#9776;</button>
+    <div class="logo-area">
+      <img src="../assets/logo.png" alt="Logo">
+      <div>
+        <h1>Violaceos Hotel</h1>
+        <span>CRM SYSTEM</span>
+      </div>
+    </div>
+  </div>
+  <div class="user-info">
+    <span class="username-text">Welcome, Admin</span> | <a href="../login.html" class="logout-link">Logout</a>
+  </div>
+</div>
+
+<div class="layout">
+  <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+  <div class="sidebar" id="sidebar">
+    <a href="../index.html">Dashboard</a>
+    <a href="guests.html">Guests / Customers</a>
+    <a href="feedback.html" class="active">Feedback</a>
+    <a href="loyalty.html">Loyalty Program</a>
+  </div>
+
+  <div class="main-content">
+    <h2 class="page-title">Guest Feedback</h2>
+
+    <div class="panel">
+      <h2>All Feedback (Newest First)</h2>
+      <div id="allFeedbackList"></div>
+    </div>
+  </div>
+</div>
+
+<footer>Violaceos Hotel CRM System</footer>
+
+<script src="../js/script.js"></script>
+<script>
+  loadAllFeedback();
+</script>
+</body>
+</html>

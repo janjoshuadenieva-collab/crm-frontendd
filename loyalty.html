@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loyalty Program - Violaceos Hotel CRM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="navbar">
+  <div class="nav-left">
+    <button class="hamburger" onclick="toggleSidebar()" aria-label="Toggle menu">&#9776;</button>
+    <div class="logo-area">
+      <img src="../assets/logo.png" alt="Logo">
+      <div>
+        <h1>Violaceos Hotel</h1>
+        <span>CRM SYSTEM</span>
+      </div>
+    </div>
+  </div>
+  <div class="user-info">
+    <span class="username-text">Welcome, Admin</span> | <a href="../login.html" class="logout-link">Logout</a>
+  </div>
+</div>
+
+<div class="layout">
+  <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+  <div class="sidebar" id="sidebar">
+    <a href="../index.html">Dashboard</a>
+    <a href="guests.html">Guests / Customers</a>
+    <a href="feedback.html">Feedback</a>
+    <a href="loyalty.html" class="active">Loyalty Program</a>
+  </div>
+
+  <div class="main-content">
+    <h2 class="page-title">Loyalty Program</h2>
+
+    <div class="panel">
+      <h2>Guest Ranking by Points</h2>
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Tier</th>
+              <th>Points</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="loyaltyTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>Tier Guide</h2>
+      <p><span class="badge badge-bronze">Bronze</span> 0 - 499 points</p>
+      <p style="margin-top:8px;"><span class="badge badge-silver">Silver</span> 500 - 999 points</p>
+      <p style="margin-top:8px;"><span class="badge badge-gold">Gold</span> 1000 - 1999 points</p>
+      <p style="margin-top:8px;"><span class="badge badge-platinum">Platinum</span> 2000+ points</p>
+    </div>
+  </div>
+</div>
+
+<footer>Violaceos Hotel CRM System</footer>
+
+<script src="../js/script.js"></script>
+<script>
+  loadLoyaltyTable();
+</script>
+</body>
+</html>

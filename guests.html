@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guests - Violaceos Hotel CRM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="navbar">
+  <div class="nav-left">
+    <button class="hamburger" onclick="toggleSidebar()" aria-label="Toggle menu">&#9776;</button>
+    <div class="logo-area">
+      <img src="../assets/logo.png" alt="Logo">
+      <div>
+        <h1>Violaceos Hotel</h1>
+        <span>CRM SYSTEM</span>
+      </div>
+    </div>
+  </div>
+  <div class="user-info">
+    <span class="username-text">Welcome, Admin</span> | <a href="../login.html" class="logout-link">Logout</a>
+  </div>
+</div>
+
+<div class="layout">
+  <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+  <div class="sidebar" id="sidebar">
+    <a href="../index.html">Dashboard</a>
+    <a href="guests.html" class="active">Guests / Customers</a>
+    <a href="feedback.html">Feedback</a>
+    <a href="loyalty.html">Loyalty Program</a>
+  </div>
+
+  <div class="main-content">
+    <h2 class="page-title">Guests / Customers</h2>
+
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search by name or email..." oninput="loadGuestsTable(this.value)">
+      <button class="btn btn-gold" onclick="toggleAddGuestPanel()">+ Add Guest</button>
+    </div>
+
+    <div class="panel" id="addGuestPanel" style="display:none;">
+      <h2>Add New Guest</h2>
+      <form onsubmit="handleAddGuestForm(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" required>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="contactNumber">Contact Number</label>
+            <input type="text" id="contactNumber" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="address">Address</label>
+          <input type="text" id="address" required>
+        </div>
+        <button type="submit" class="btn">Save Guest</button>
+      </form>
+    </div>
+
+    <div class="panel">
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Contact</th>
+              <th>Email</th>
+              <th>Status</th>
+              <th>Loyalty Tier</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="guestsTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>Violaceos Hotel CRM System</footer>
+
+<script src="../js/script.js"></script>
+<script>
+  loadGuestsTable("");
+</script>
+</body>
+</html>
